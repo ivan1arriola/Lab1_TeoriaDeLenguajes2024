@@ -3,16 +3,10 @@ import re
 import sys
 
 def prog(texto):
-    match = re.findall('(?<=@)\w+', texto)
-    mylist = list(dict.fromkeys(match))
-    ret = ""
-    for item in mylist:
-        ret += item + '\n'
+    match = re.findall(r'"timestamp": "T (.*)",', texto)
     
-    #ver si se puede cambiar 
-    #ret = re.sub(r"', '", "\n", ret)
-    #ret = f"{match}"
 
+    ret = f"{match}"
     return ret
 
 if __name__ == '__main__':

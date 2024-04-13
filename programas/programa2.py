@@ -3,16 +3,18 @@ import re
 import sys
 
 def prog(texto):
-    match = re.findall('(?<=@)\w+', texto)
-    mylist = list(dict.fromkeys(match))
+    match = re.findall(r'"user": "(.*)",', texto)
+    diccionario = dict()
     ret = ""
-    for item in mylist:
-        ret += item + '\n'
-    
-    #ver si se puede cambiar 
-    #ret = re.sub(r"', '", "\n", ret)
-    #ret = f"{match}"
+    for item in match:
+        if item in diccionario.keys():
+            diccionario[item] += 1
+        else:
+            diccionario[item] = 1
 
+    for item in diccionario.keys():
+        ret += item + ': ' + str(diccionario[item]) + '\n'
+    #ret = f"{match}"    
     return ret
 
 if __name__ == '__main__':
