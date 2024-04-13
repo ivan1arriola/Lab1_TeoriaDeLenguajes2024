@@ -19,7 +19,7 @@ def prog(texto):
         "11": "noviembre",
         "12": "diciembre"
     }
-    ret = ""
+    fechasLista = list()
 
     for elem in match:
         fecha = re.findall(r'\d+', elem)
@@ -30,10 +30,9 @@ def prog(texto):
         mm = fecha[4]
 
         fechaStr = dd + " de " + mes + " del " + aaaa + " a las " + hh + ":" +mm + " hs."
+        fechasLista.append(fechaStr)
 
-        ret += fechaStr + '\n'
-
-    ret = ret[:-1]
+    ret =  "\n".join(fechasLista)
     return ret
 
 if __name__ == '__main__':

@@ -5,14 +5,7 @@ import sys
 def prog(texto):
     match = re.findall('@(\w+)', texto)
     mylist = list(dict.fromkeys(match))
-    ret = ""
-    for item in mylist:
-        ret += item + '\n'
-    ret = ret[:-1]
-    #ver si se puede cambiar 
-    #ret = re.sub(r"', '", "\n", ret)
-    #ret = f"{match}"
-
+    ret =  "\n".join(mylist)
     return ret
 
 if __name__ == '__main__':
