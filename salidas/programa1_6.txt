@@ -1,9 +1,0 @@
-codeNewbie
-pythonista
-dataDiver
-webWanderer
-uiUxUnicorn
-bugHunter
-securitySentry
-devOpsDynamo
-cloudCrafter

@@ -1,2 +1,0 @@
-dataNerd: 1
-pythoneer: 1
