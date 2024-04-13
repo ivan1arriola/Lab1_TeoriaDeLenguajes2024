@@ -3,7 +3,7 @@ import re
 import sys
 
 def prog(texto):
-    match = re.findall('(?<=@)\w+', texto)
+    match = re.findall('@(\w+)', texto)
     mylist = list(dict.fromkeys(match))
     ret = ""
     for item in mylist:

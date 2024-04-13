@@ -4,9 +4,35 @@ import sys
 
 def prog(texto):
     match = re.findall(r'"timestamp": "T (.*)",', texto)
-    
 
-    ret = f"{match}"
+    meses = {
+        "01": "enero",
+        "02": "febrero",
+        "03": "marzo",
+        "04": "abril",
+        "05": "mayo",
+        "06": "junio",
+        "07": "julio",
+        "08": "agosto",
+        "09": "septiembre",
+        "10": "octubre",
+        "11": "noviembre",
+        "12": "diciembre"
+    }
+    ret = ""
+
+    for elem in match:
+        fecha = re.findall(r'\d+', elem)
+        dd = fecha[2]
+        mes = meses[fecha[1]]
+        aaaa = fecha[0]
+        hh = fecha[3]
+        mm = fecha[4]
+
+        fechaStr = dd + " de " + mes + " del " + aaaa + " a las " + hh + ":" +mm + " hs."
+
+        ret += fechaStr + '\n'
+
     return ret
 
 if __name__ == '__main__':
