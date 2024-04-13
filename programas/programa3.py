@@ -33,6 +33,7 @@ def prog(texto):
 
         ret += fechaStr + '\n'
 
+    ret = ret[:-1]
     return ret
 
 if __name__ == '__main__':

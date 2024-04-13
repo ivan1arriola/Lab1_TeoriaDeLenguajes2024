@@ -8,7 +8,7 @@ def prog(texto):
     ret = ""
     for item in mylist:
         ret += item + '\n'
-    
+    ret = ret[:-1]
     #ver si se puede cambiar 
     #ret = re.sub(r"', '", "\n", ret)
     #ret = f"{match}"
