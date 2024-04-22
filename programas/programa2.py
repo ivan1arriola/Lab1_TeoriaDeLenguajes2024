@@ -15,7 +15,6 @@ def prog(texto):
     for item in diccionario.keys():
         ret += item + ': ' + str(diccionario[item]) + '\n'
     ret = ret[:-1]
-    #ret = f"{match}"    
     return ret
 
 if __name__ == '__main__':
