@@ -4,10 +4,7 @@ import sys
 
 def prog(texto):
     match = re.findall(r'#+(.*)\\n ', texto)
-    ret = ""
-    for item in match:
-        ret += item + '\n'
-
+    ret = "\n".join(match)
     return ret
 
 if __name__ == '__main__':
